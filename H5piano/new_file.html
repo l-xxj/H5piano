@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<title>1</title>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+	    <style type="text/css">
+		 *{margin: 0rem;padding:0rem;list-style:none;}
+		  #all{width:13.25rem;height:100%;margin:0 auto;position:relative;}
+	     
+		  li{width:0.9rem;height:3.2rem;background-color: rgba(255,255,255,1);margin-right: 0.04rem;border-radius:0rem 0rem 0.15rem 0.15rem;float:left;text-align:center;line-height:5.8rem;
+		 box-shadow: inset 0rem -0.1rem 0.1rem  rgba(47,42,35,0.7);
+		  
+		  }
+		 .black{width:0.72rem;height:40%;border-radius:0rem 0rem 0.1rem 0.1rem;position:absolute;
+		 background:linear-gradient(to top,rgba(121,130,137,1),rgba(19,26,42,1));
+		 box-shadow: inset 0rem -0.02rem 0.01rem  rgba(255,255,255,1);}
+		 .blackt{width: 13.2rem;height: 1.5rem;}
+	    </style>
+		
+	<script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 1320*100 + 'px';
+    </script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	
+	</head>
+<body style="margin: 0 ;padding: 0;font-size: 0.32rem">
+	
+	
+<div style="width:13.12rem;height:4.8rem;background: #000000;">
+   <canvas id="myCanvas" class="blackt"></canvas>
+
+  <ul id="all">
+	
+  	<li value="C5"><div onselectstart="return false;">C5</div></li>
+  	<li value="D5"><div onselectstart="return false;">D5</div></li>
+  	<li value="E5"><div onselectstart="return false;">E5</div></li>
+  	<li value="F5"><div onselectstart="return false;">F5</div></li>
+  	<li value="G5"><div onselectstart="return false;">G5</div></li>
+  	<li value="A5"><div onselectstart="return false;">A5</div></li>
+  	<li value="B5"><div onselectstart="return false;">B5</div></li>
+  	<li value="C6"><div onselectstart="return false;">C6</div></li>
+  	<li value="D6"><div onselectstart="return false;">D6</div></li>
+  	<li value="E6"><div onselectstart="return false;">E6</div></li>
+  	<li value="F6"><div onselectstart="return false;">F6</div></li>
+  	<li value="G6"><div onselectstart="return false;">G6</div></li>
+  	<li value="A6"><div onselectstart="return false;">A6</div></li>
+  	<li value="B6"><div onselectstart="return false;">B6</div></li>
+  	<li  value="SC5" class="black" style="left:0.56rem;"></li>
+  	<li  value="SD5" class="black" style="left:1.5rem;"></li>
+  	<li  value="SF5" class="black" style="left:3.38rem;"></li>
+  	<li  value="SG5" class="black" style="left:4.32rem;"></li>
+  	<li  value="SA5" class="black" style="left:5.26rem;"></li>
+   
+  	<li  value="SC6" class="black" style="left:7.14rem;"></li>
+  	<li  value="SD6" class="black" style="left:8.08rem;"></li>
+   
+  	<li  value="SF6" class="black" style="left:9.96rem;"></li>
+  	<li  value="SG6" class="black" style="left:10.9rem;"></li>
+  	<li  value="SA6" class="black" style="left:11.84rem;"></li>
+   
+  </ul>
+	</div>
+	
+	
+<script type="text/javascript">
+	//鼠标按下事件
+	$('li').mousedown(function(){
+	    var a=$(this).html();
+		//拼接路径
+		var  src = "./music/"+$(this).attr("value")+'.MP3';
+		console.log(src);
+		//创建媒体对象
+		var audio = new Audio(src);
+		//调用play方法
+		audio.play();
+		// 改变当前按键的颜色	
+		$(this).css('background','rgba(223,223,223,1)');
+	})
+
+	//鼠标抬起事件
+	$('li').mouseup(function(){
+		//回复键盘的颜色
+		var a=$(this).html();
+		var src,col;
+	    (a=='') ? col = "linear-gradient(to top,rgba(121,130,137,1),rgba(19,26,42,1))" : col = "rgba(255,255,255,1)";
+		$(this).css('background',col);
+	})
+ 
+	//mouseover  mouseout
+	$('li').mouseout(function(){
+		var a=$(this).html();
+		var col;
+		(a=='') ? col = "linear-gradient(to top,rgba(121,130,137,1),rgba(19,26,42,1))" : col = "rgba(255,255,255,1)";
+		$(this).css('background',col);
+	})
+ 
+	//键盘按下事件
+	$(window).keypress(function(e){
+		//获取当前的按键
+		var k = e.key.toLowerCase();
+		//针对按键进行不同的操作
+		switch(k){
+			case "q":
+				$('li:contains(C5)').mousedown();
+				break;
+			case "w":
+				$('li:contains(D5)').mousedown();
+				break;
+			case "e":
+				$('li:contains(F5)').mousedown();
+				break;
+			case "r":
+				$('li:contains(G5)').mousedown();
+				break;
+			case "t":
+				$('li:contains(A5)').mousedown();
+				break;
+			case "y":
+				$('li:contains(B5)').mousedown();
+				break;
+			case "u":
+				$('li:contains(C6)').mousedown();
+				break;
+			case "i":
+				$('li:contains(D6)').mousedown();
+				break;
+			case "o":
+				$('li:contains(E6)').mousedown();
+				break;
+			case "p":
+				$('li:contains(F6)').mousedown();
+				break;
+			case "[":
+				$('li:contains(G6)').mousedown();
+				break;
+			case "]":
+				$('li:contains(A6)').mousedown();
+				break;
+			case "\\":
+				$('li:contains(B6)').mousedown();
+				break;
+			case "pageup":
+				$('li:contains(SC5)').mousedown();
+				break;
+			case "pagedown":
+				$('li:contains(SD5)').mousedown();
+				break;
+			case "end":
+				$('li:contains(SE5)').mousedown();
+				break;
+			default:
+				return false;
+		}
+		return false;
+	})
+ 
+	$(window).keyup(function(){
+		$('li').not('.black').css('background','rgba(255,255,255,1)');
+	})
+ 
+ 
+ 
+ 
+ 
+	</script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>
