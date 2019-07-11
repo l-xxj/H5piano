@@ -1,0 +1,25 @@
+*{
+	margin: 0rem;padding:0rem;list-style:none;
+	}
+body{
+	font-size: 0.32rem;overflow: hidden;
+}
+.blo{
+	width:13.17rem;height:4.8rem;background: #000000;
+}
+#all{
+	width:13.17rem;height:100%;margin:0 auto;position:relative;
+	}
+li{
+	width:0.9rem;height:3.2rem;background-color: rgba(255,255,255,1);margin-right: 0.04rem;
+    border-radius:0rem 0rem 0.15rem 0.15rem;float:left;text-align:center;line-height:5.8rem;
+    box-shadow: inset 0rem -0.1rem 0.1rem  rgba(47,42,35,0.7);
+	}
+.black{
+	width:0.72rem;height:40%;border-radius:0rem 0rem 0.1rem 0.1rem;position:absolute;
+    background:linear-gradient(to top,rgba(121,130,137,1),rgba(19,26,42,1));
+    box-shadow: inset 0rem -0.02rem 0.01rem  rgba(255,255,255,1);
+	}
+.blackt{
+	width: 13.17rem;height: 1.5rem;
+	}
